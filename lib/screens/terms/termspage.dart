@@ -1,16 +1,18 @@
 import 'package:bfproperty/localization/localizations.dart';
+import 'package:bfproperty/screens/terms/components/body.dart';
+import 'package:bfproperty/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/custom_app_bar.dart';
-import 'components/body.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
+class TermsScreen extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50),
-        child: GradientAppBar(labels?.auth?.resetPasswordTitle),
+        child: GradientAppBar(labels?.terms?.titlelabel),
       ),
       body: Body(),
     );

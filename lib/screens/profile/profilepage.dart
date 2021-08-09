@@ -5,7 +5,7 @@ import 'package:bfproperty/constants/size_config.dart';
 import 'package:get/get.dart';
 import 'components/body.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfileScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
 
   @override

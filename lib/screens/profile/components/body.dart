@@ -53,17 +53,17 @@ class Body extends StatelessWidget {
                           SinglePageItem(
                             icon: 'assets/icons/list-outline.png',
                             title: labels?.profile?.listinglabel,
-                            navigation: null,
+                            navigation: 'mylisting',
                           ),
                           SinglePageItem(
                             icon: 'assets/icons/health-outline.png',
                             title: labels?.profile?.favoritelabel,
-                            navigation: null,
+                            navigation: 'myfavorite',
                           ),
                           SinglePageItem(
                             icon: 'assets/icons/profile-outline.png',
                             title: labels?.profile?.userlabel,
-                            navigation: null,
+                            navigation: 'profile',
                           ),
                           SinglePageItem(
                             icon: 'assets/icons/setting-outline.png',
@@ -73,12 +73,12 @@ class Body extends StatelessWidget {
                           SinglePageItem(
                             icon: 'assets/icons/email-outline.png',
                             title: labels?.profile?.contactlabel,
-                            navigation: null,
+                            navigation: 'contact',
                           ),
                           SinglePageItem(
                             icon: 'assets/icons/auth-outline.png',
-                            title: "ข้อตกลงและเงื่อนไข",
-                            navigation: null,
+                            title: labels?.terms?.titlelabel,
+                            navigation: 'terms',
                           ),
                         ]),
                   ),

@@ -1,4 +1,5 @@
 import 'package:bfproperty/controllers/controllers.dart';
+import 'package:bfproperty/localization/localizations.dart';
 import 'package:bfproperty/models/real_estate_model.dart';
 import 'package:flutter/material.dart';
 import 'package:bfproperty/constants/size_config.dart';
@@ -19,6 +20,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final labels = AppLocalizations.of(context);
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: SizedBox(
@@ -46,9 +48,20 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
                 Text(
                   realEstate.name.replaceAll(new RegExp(r'-'), ' '),
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600,),
+                  maxLines: 1,
+                  softWrap: false,
+                  overflow: TextOverflow.fade,
+                ),
+                Text(
+                  realEstate.idtype == 1
+                      ? labels?.propertydetail?.typeproperty1label
+                      : realEstate.idtype == 2
+                          ? labels?.propertydetail?.typeproperty2label
+                          : labels?.propertydetail?.typeproperty3label,
                   style: TextStyle(color: Colors.black),
                   maxLines: 1,
                   softWrap: false,
@@ -68,9 +81,11 @@ class ProductCard extends StatelessWidget {
                     ),
                     InkWell(
                       borderRadius: BorderRadius.circular(50),
-                      onTap: () => userController.upDateFavorite(realEstate.id,context),
+                      onTap: () =>
+                          userController.upDateFavorite(realEstate.id, context),
                       child: Container(
-                          padding: EdgeInsets.all(getProportionateScreenWidth(8)),
+                          padding:
+                              EdgeInsets.all(getProportionateScreenWidth(8)),
                           height: getProportionateScreenWidth(35),
                           width: getProportionateScreenWidth(35),
                           decoration: BoxDecoration(

@@ -17,12 +17,12 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 
 
-class DetailPage extends StatefulWidget {
+class DetailScreen extends StatefulWidget {
   @override
-  _DetailPageState createState() => _DetailPageState();
+  _DetailScreenState createState() => _DetailScreenState();
 }
 
-class _DetailPageState extends State<DetailPage> {
+class _DetailScreenState extends State<DetailScreen> {
   RealEstateModel data;
   bool disable = false;
   bool _isButtonDisabled;

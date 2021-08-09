@@ -17,7 +17,7 @@ class RealestateCard extends StatelessWidget {
   final double width, aspectRetio;
   final RealEstateModel realEstate;
   final AuthController authController = AuthController.to;
-  
+
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
@@ -30,14 +30,10 @@ class RealestateCard extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    alignment: Alignment.topCenter,
-                    padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                    height: getProportionateScreenWidth(100),
-                    width: getProportionateScreenWidth(100),
+                    height: getProportionateScreenHeight(140),
+                    width: getProportionateScreenWidth(115),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(5.0),
-                          topLeft: Radius.circular(5.0)),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
                       child: Hero(
                         tag: realEstate.name,
                         child: Image.network(
@@ -56,18 +52,24 @@ class RealestateCard extends StatelessWidget {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                                  const EdgeInsets.only(top: 8.0, bottom: 2.0),
                               child: Text(
                                 realEstate.name
                                     .replaceAll(new RegExp(r'-'), ' '),
                                 style: new TextStyle(
                                     fontSize: 17.0,
                                     fontWeight: FontWeight.bold),
-                                maxLines: 2,
+                                maxLines: 1,
                                 softWrap: false,
                                 overflow: TextOverflow.fade,
                               ),
                             ),
+                            Text(realEstate.idtype == 1
+                                ? labels?.propertydetail?.typeproperty1label
+                                : realEstate.idtype == 2
+                                    ? labels?.propertydetail?.typeproperty2label
+                                    : labels
+                                        ?.propertydetail?.typeproperty3label),
                             Text(
                               realEstate.address +
                                   " " +

@@ -2,22 +2,22 @@ import 'dart:convert';
 
 import 'package:bfproperty/constants/size_config.dart';
 import 'package:bfproperty/controllers/auth_controller.dart';
+import 'package:bfproperty/controllers/controllers.dart';
 import 'package:bfproperty/localization/localizations.dart';
 import 'package:bfproperty/models/real_estate_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import '../../widgets/custom_app_bar.dart';
-import 'package:http/http.dart' as http;
 import 'components/body.dart';
 
-class FavoritePage extends StatefulWidget {
+class FavoriteScreen extends StatefulWidget {
   @override
-  _FavoritePageState createState() => _FavoritePageState();
+  _FavoriteScreenState createState() => _FavoriteScreenState();
 }
 
-class _FavoritePageState extends State<FavoritePage> {
+class _FavoriteScreenState extends State<FavoriteScreen> {
   final AuthController authController = AuthController.to;
+  final UserController userController = UserController.to;
   AppLocalizations_Labels labels;
   void initState() {
     super.initState();
@@ -28,39 +28,7 @@ class _FavoritePageState extends State<FavoritePage> {
   }
 
   // ignore: missing_return
-  Future<List<RealEstateModel>> _loadMyFavoriteRealestate() async {
-    var uri = Uri(
-      scheme: 'https',
-      host: 'us-central1-bfproperty.cloudfunctions.net',
-      path: '/webApi/api/v1/favoriterealestatelist',
-      queryParameters: {
-        'favoritelist': authController.firestoreUser.value.favorite,
-      },
-    );
-    final response = await http.get(
-      uri,
-      headers: <String, String>{
-        'Content-Type': 'application/json',
-      },
-    );
 
-    if (response.statusCode == 200) {
-      // If the server did return a 200 OK response,
-      // then parse the JSON.
-      List jsonResponse = json.decode(response.body);
-      return jsonResponse
-          .map((data) => new RealEstateModel.fromJson(data))
-          .toList();
-    } else {
-      Get.snackbar(
-        labels?.propertydetail?.errorlabel,
-        response.body,
-        colorText: Colors.white,
-        backgroundColor: Colors.red[400],
-        duration: Duration(seconds: 5),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,14 +36,14 @@ class _FavoritePageState extends State<FavoritePage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50),
-        child: GradientAppBar("รายการที่ชอบ"),
+        child: GradientAppBar(labels.favorite.titlelabel),
       ),
       body: RefreshIndicator(
         onRefresh: () {
           Navigator.pushReplacement(
             context,
             PageRouteBuilder(
-              pageBuilder: (a, b, c) => FavoritePage(),
+              pageBuilder: (a, b, c) => FavoriteScreen(),
               transitionDuration: Duration(seconds: 0),
             ),
           );
@@ -83,7 +51,7 @@ class _FavoritePageState extends State<FavoritePage> {
         },
         child: FutureBuilder<List<RealEstateModel>>(
           future: authController.firestoreUser.value.favorite.length != 0
-              ? _loadMyFavoriteRealestate()
+              ? userController.loadMyFavoriteRealestate(context)
               : null,
           builder: (context, AsyncSnapshot<List<RealEstateModel>> snapshot) {
             if (snapshot.hasData) {
@@ -110,7 +78,7 @@ class _FavoritePageState extends State<FavoritePage> {
                           width: getProportionateScreenWidth(150),
                           child: SvgPicture.asset('assets/images/No_Data.svg')),
                       SizedBox(height: 15),
-                      Text('ไม่มีรายการที่ชอบ', style: TextStyle(fontSize: 18))
+                      Text(labels.favorite.emptylabel, style: TextStyle(fontSize: 18))
                     ],
                   ),
                 ),

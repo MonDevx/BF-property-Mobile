@@ -133,10 +133,32 @@ class AppLocalizations {
           phoneerrorlabel: "กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง",
           titledialoglabel: "ติดต่อเจ้าของประกาศ",
           sizelabel: "ตร.ม",
-          successfavoritelabel: "อัปเดทรายการที่ชอบสำเร็จ"),
+          successfavoritelabel: "อัปเดทรายการที่ชอบสำเร็จ",
+          typeproperty1label: "บ้านเดี่ยว",
+          typeproperty2label: "บ้านเทาว์เฮาส์",
+          typeproperty3label: "คอนโด"),
       favorite: AppLocalizations_Labels_Favorite(
         titlelabel: "รายการที่ชอบ",
         emptylabel: "ไม่มีรายการที่ชอบ",
+      ),
+      terms: AppLocalizations_Labels_Terms(
+        titlelabel: "ข้อตกลงและเงือนไข",
+        headerlabel: "ข้อตกลงและเงื่อนไขการใช้แอพพิเคชั่น bf-property",
+        detaillabel1:
+            "ทางผู้จัดเว็ปไซต์จะไม่ยอมรับ หรือรับผิดชอบต่อ ข้อผิดพลาดใดๆหรือการละเลยเนื้อหาในเว็ปไซต์นี้",
+        detaillabel2:
+            "เมื่อท่านอัพโหลดข้อมูลทุกชนิดลงบนเว็ปไซต์นี้ ท่านต้องยอมรับว่าท่านได้อัพโหลดข้อมูลลงเว็บไซต์เราไม่ได้เป็นการละเมิดสิทธิ์จากบุคคลผู้ที่เป็นเจ้าลิขสิทธ์,เครื่องหมายการค้า, ความเป็นส่วนตัวหรือสินทรัพย์ที่เป็นสิทธิส่วนบุคคลท่านจะต้องเป็นผู้รับผิดชอบข้อมูลทั้งหมดแต่เพียงผู้เดียว",
+        detaillabel3:
+            "ทางผู้จัดทำเว็ปไซต์ ไม่ขอรับผิดต่อความเสียหายทางตรงและทางอ้อมหรือต่อความเสียหายอื่น ๆ ที่เกิดขึ้นจากการเข้าใช้เว็บไซต์ของท่านท่านยินยอมที่จะชดใช้ ปกป้อง และคุ้มครองไม่ให้ผู้ที่เกี่ยวข้องกับการสร้าง การผลิตและการเผยแพร่เว็บไซตนี้ได้รับอันตรายจากการเรียกร้องค่าเสียหายความรับผิด การสูญเสียชดใช้ค่าใช้จ่ายที่เกิดขึ้นอันเนื่องมาจากการละเมิดใด ๆที่กระทำโดยท่านต่อเงื่อนไขการใช้เหล่านี้ หรืออันเป็นผลมาจากหรือที่เกี่ยวข้องกับการใช้เว็บไซต์นี้ของท่าน",
+        detaillabel4:
+            "เว็ปไชต์นี้มีการเชื่อมต่อ Facebook และ Google API เพื่อช่วยในเรื่องของการให้บริการที่รวดเร็วและง่ายดายทางผู้จัดทำเว็ปไซต์ไม่อนุญาตให้ใส่ลิงค์ที่ไม่ได้รับอนุญาตในเว็บไซต์นี้",
+        detaillabel5:
+            "ผู้จัดทำเว็ปไซต์ขอสงวนสิทธิ์ในการแก้ไขหรือปรับปรุงเงื่อนไขการใช้งานในปัจจุบันณ เวลาใดก็ได้ โดยไม่จำเป็นต้องแจ้งให้ทราบล่วงหน้าท่านสามารถติดตามการแก้ไขเปลี่ยนแปลงได้ในหน้าเว็บไซต์นี้",
+        subheaderlabel1: "เกี่ยวกับข้อมูลในเว็บไซต์",
+        subheaderlabel2: "การเพิ่มข้อมูลลงเว็ปไซต์",
+        subheaderlabel3: "การจำกัดความรับผิดและการชดใช้",
+        subheaderlabel4: "การเชื่อมต่อไปยังเว็บไซต์อื่น",
+        subheaderlabel5: "การเปลี่ยนแปลงข้อตกลงและเงื่อนไขการใช้งานเว็ปไซต์",
       ),
     ),
     Locale.fromSubtags(languageCode: "en"): AppLocalizations_Labels(
@@ -260,10 +282,34 @@ class AppLocalizations {
           phoneerrorlabel: "Please enter a valid phone number",
           titledialoglabel: "Contact the owner of the announcement",
           sizelabel: "sq.m",
-          successfavoritelabel: "Successfully update your favorites."),
+          successfavoritelabel: "Successfully update your favorites.",
+          typeproperty1label: "Detached house",
+          typeproperty2label: "Baan Town House",
+          typeproperty3label: "Condominium"),
       favorite: AppLocalizations_Labels_Favorite(
         titlelabel: "Favorites",
         emptylabel: "No favorites",
+      ),
+      terms: AppLocalizations_Labels_Terms(
+        titlelabel: "Terms and Conditions",
+        headerlabel:
+            "Terms and Conditions of Use of the Application bf-property",
+        detaillabel1:
+            "The website organizer will not accept. or responsible for any error or omission of content on this site",
+        detaillabel2:
+            "When you upload any kind of information on this website You agree that your uploading information to our website does not infringe the rights of any person who owns the copyright, trademark, privacy or personal assets. You are solely responsible for all information. ",
+        detaillabel3:
+            "The website maker You will not be liable for direct and indirect damages or any other damages arising from your use of the website. The production and distribution of this website is harmed by liability claims. reimbursement for the costs incurred as a result of any breach. that is done by you These terms of use or as a result of or in connection with your use of this website.",
+        detaillabel4:
+            "This website has Facebook and Google API interfaces to help provide quick and easy service. The website operator does not allow unauthorized links to this website.",
+        detaillabel5:
+            "The website creator reserves the right to amend or update the current terms of use at any time without prior notice. You can follow the amendments on this website page.",
+        subheaderlabel1: "About information on the site",
+        subheaderlabel2: "Adding information to the site",
+        subheaderlabel3: "LIMITATION OF LIABILITY AND REMEDIES",
+        subheaderlabel4: "Connection to another website",
+        subheaderlabel5:
+            "Changes to terms and conditions of use of the website",
       ),
     ),
     Locale.fromSubtags(languageCode: "zh"): AppLocalizations_Labels(
@@ -385,10 +431,30 @@ class AppLocalizations {
           phoneerrorlabel: "請輸入一個有效的電話號碼。",
           titledialoglabel: "聯繫所有者",
           sizelabel: "平方米",
-          successfavoritelabel: "成功更新您的收藏夾。"),
+          successfavoritelabel: "成功更新您的收藏夾。",
+          typeproperty1label: "獨立屋",
+          typeproperty2label: "班安聯排別墅",
+          typeproperty3label: "公寓"),
       favorite: AppLocalizations_Labels_Favorite(
         titlelabel: "收藏夾",
         emptylabel: "沒有收藏夾",
+      ),
+      terms: AppLocalizations_Labels_Terms(
+        titlelabel: "條款和條件",
+        headerlabel: "應用程序 bf-property 的使用條款和條件",
+        detaillabel1: "網站主辦方不接受。或對本網站內容的任何錯誤或遺漏負責",
+        detaillabel2:
+            "當您在本網站上傳任何類型的信息時，您同意您向本網站上傳的信息不侵犯任何擁有版權、商標、隱私或個人資產的人的權利。您對所有信息負全部責任。",
+        detaillabel3:
+            "網站製作者對於因使用本網站而引起的直接和間接損害或任何其他損害，您概不負責。本網站的製作和分發受到責任索賠的損害。因任何違約而產生的費用的補償。由您完成這些使用條款或由於您使用本網站或與您使用本網站有關。",
+        detaillabel4:
+            "本網站具有 Facebook 和 Google API 接口，可幫助提供快速簡便的服務。網站運營商不允許未經授權鏈接到本網站。",
+        detaillabel5: "網站創建者保留隨時修改或更新當前使用條款的權利，恕不另行通知。您可以按照本網站頁面上的修訂進行操作。",
+        subheaderlabel1: "關於網站信息",
+        subheaderlabel2: "向網站添加信息",
+        subheaderlabel3: "責任限制和補救措施",
+        subheaderlabel4: "連接到另一個網站",
+        subheaderlabel5: "網站使用條款和條件的變更",
       ),
     )
   };
@@ -625,6 +691,9 @@ class AppLocalizations_Labels_Property_Detail {
       this.errordetaillabel,
       this.bathlabel,
       this.sizelabel,
+      this.typeproperty1label,
+      this.typeproperty2label,
+      this.typeproperty3label,
       this.successfavoritelabel});
   final String detaillabel;
   final String pricelabel;
@@ -653,6 +722,9 @@ class AppLocalizations_Labels_Property_Detail {
   final String bathlabel;
   final String sizelabel;
   final String successfavoritelabel;
+  final String typeproperty1label;
+  final String typeproperty2label;
+  final String typeproperty3label;
 }
 
 class AppLocalizations_Labels_Favorite {
@@ -664,6 +736,35 @@ class AppLocalizations_Labels_Favorite {
   final String emptylabel;
 }
 
+class AppLocalizations_Labels_Terms {
+  const AppLocalizations_Labels_Terms(
+      {this.titlelabel,
+      this.headerlabel,
+      this.subheaderlabel1,
+      this.subheaderlabel2,
+      this.subheaderlabel3,
+      this.subheaderlabel4,
+      this.subheaderlabel5,
+      this.detaillabel1,
+      this.detaillabel2,
+      this.detaillabel3,
+      this.detaillabel4,
+      this.detaillabel5});
+
+  final String titlelabel;
+  final String headerlabel;
+  final String subheaderlabel1;
+  final String subheaderlabel2;
+  final String subheaderlabel3;
+  final String subheaderlabel4;
+  final String subheaderlabel5;
+  final String detaillabel1;
+  final String detaillabel2;
+  final String detaillabel3;
+  final String detaillabel4;
+  final String detaillabel5;
+}
+
 class AppLocalizations_Labels {
   const AppLocalizations_Labels(
       {this.auth,
@@ -672,7 +773,8 @@ class AppLocalizations_Labels {
       this.home,
       this.onboarding,
       this.propertydetail,
-      this.favorite});
+      this.favorite,
+      this.terms});
 
   final AppLocalizations_Labels_Auth auth;
 
@@ -687,4 +789,6 @@ class AppLocalizations_Labels {
   final AppLocalizations_Labels_Property_Detail propertydetail;
 
   final AppLocalizations_Labels_Favorite favorite;
+
+  final AppLocalizations_Labels_Terms terms;
 }

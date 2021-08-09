@@ -5,7 +5,7 @@ import '../../widgets/custom_app_bar.dart';
 
 import 'components/body.dart';
 
-class SettingPage extends StatelessWidget {
+class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);

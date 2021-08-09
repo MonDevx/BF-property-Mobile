@@ -142,8 +142,8 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                     children: [
                       GetBuilder<AuthController>(
                           builder: (controller) => IconButton(
-                                onPressed: () => userController
-                                    .upDateFavorite(widget.data.id,context),
+                                onPressed: () => userController.upDateFavorite(
+                                    widget.data.id, context),
                                 icon: Icon(
                                   MdiIcons.heart,
                                   color: authController
@@ -175,6 +175,13 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                           fontSize: 17.0,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 0)),
+                  Text(
+                      widget.data.idtype == 1
+                          ? labels?.propertydetail?.typeproperty1label
+                          : widget.data.idtype == 2
+                              ? labels?.propertydetail?.typeproperty2label
+                              : labels?.propertydetail?.typeproperty3label,
+                      style: new TextStyle(fontSize: 17.0, letterSpacing: 0)),
                   Container(
                     margin: EdgeInsets.only(top: 16),
                     child: RichText(

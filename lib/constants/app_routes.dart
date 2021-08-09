@@ -1,12 +1,15 @@
 import 'package:bfproperty/screens/%E0%B9%87Home/HomePage.dart';
-import 'package:bfproperty/screens/Forgot_password/fogetpasswordpage.dart';
-import 'package:bfproperty/screens/On_Boarding/OnBoardingPage.dart';
-import 'package:bfproperty/screens/Profile/ProfilePage.dart';
 import 'package:bfproperty/screens/Sign_in/SignInPage.dart';
 import 'package:bfproperty/screens/Sign_up/signuppage.dart';
+import 'package:bfproperty/screens/contact/contactpage.dart';
 import 'package:bfproperty/screens/details/detailpage.dart';
 import 'package:bfproperty/screens/favorite/favoritepage.dart';
+import 'package:bfproperty/screens/fillter/fillterpage.dart';
+import 'package:bfproperty/screens/forgot_password/fogetpasswordpage.dart';
+import 'package:bfproperty/screens/on_boarding/onboardingpage.dart';
+import 'package:bfproperty/screens/profile/profilepage.dart';
 import 'package:bfproperty/screens/settings/settingscreen.dart';
+import 'package:bfproperty/screens/terms/termspage.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
@@ -26,27 +29,39 @@ class AppRoutes {
     ),
     GetPage(
       name: '/intro',
-      page: () => OnBoardingPage(),
+      page: () => OnBoardingScreen(),
     ),
     GetPage(
       name: '/forgetpassword',
-      page: () => ForgotPasswordPage(),
+      page: () => ForgotPasswordScreen(),
     ),
     GetPage(
       name: '/profile',
-      page: () => ProfilePage(),
+      page: () => ProfileScreen(),
     ),
     GetPage(
       name: '/settings',
-      page: () => SettingPage(),
+      page: () => SettingScreen(),
     ),
     GetPage(
       name: '/detail',
-      page: () => DetailPage(),
+      page: () => DetailScreen(),
     ),
-       GetPage(
+    GetPage(
       name: '/myfavorite',
-      page: () => FavoritePage(),
+      page: () => FavoriteScreen(),
+    ),
+    GetPage(
+      name: '/fillter',
+      page: () => Fillter(),
+    ),
+    GetPage(
+      name: '/terms',
+      page: () => TermsScreen(),
+    ),
+    GetPage(
+      name: '/contact',
+      page: () => ContactScreen(),
     ),
   ];
 }

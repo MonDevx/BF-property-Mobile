@@ -52,12 +52,49 @@ class UserController extends GetxController {
         // ),
       );
       authController.update();
-
     } else {
       Get.snackbar(
         labels.propertydetail.errorlabel,
         response.body,
         colorText: Get.theme.snackBarTheme.actionTextColor,
+        backgroundColor: Colors.red[400],
+        duration: Duration(seconds: 5),
+      );
+    }
+  }
+
+  Future<List<RealEstateModel>> loadMyFavoriteRealestate(
+      BuildContext context) async {
+    final labels = AppLocalizations.of(context);
+    var idToken = await authController.getIdToken;
+    var uri = Uri(
+      scheme: 'https',
+      host: 'us-central1-bfproperty.cloudfunctions.net',
+      path: '/webApi/api/v1/favoriterealestatelist',
+      queryParameters: {
+        'favoritelist': authController.firestoreUser.value.favorite,
+      },
+    );
+    final response = await http.get(
+      uri,
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $idToken',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      List jsonResponse = json.decode(response.body);
+      return jsonResponse
+          .map((data) => new RealEstateModel.fromJson(data))
+          .toList();
+    } else {
+      Get.snackbar(
+        labels?.propertydetail?.errorlabel,
+        response.body,
+        colorText: Colors.white,
         backgroundColor: Colors.red[400],
         duration: Duration(seconds: 5),
       );
