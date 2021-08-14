@@ -8,6 +8,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
+    final ThemeData themeData = Theme.of(context);
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
@@ -18,7 +19,7 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
-                Text(labels?.auth?.signUpText, style: headingStyle),
+                Text(labels?.auth?.signUpText,  style: themeData.textTheme.headline6),
                 Text(
                   "${labels?.auth?.signUpSubText1} \n${labels?.auth?.signUpSubText2}",
                   textAlign: TextAlign.center,

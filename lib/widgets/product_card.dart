@@ -21,8 +21,9 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
+    final ThemeData themeData = Theme.of(context);
     return Padding(
-      padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
+      padding: EdgeInsets.only(left: getProportionateScreenWidth(15)),
       child: SizedBox(
         width: getProportionateScreenWidth(width),
         child: InkWell(
@@ -51,7 +52,7 @@ class ProductCard extends StatelessWidget {
                 const SizedBox(height: 5),
                 Text(
                   realEstate.name.replaceAll(new RegExp(r'-'), ' '),
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600,),
+                  style: themeData.textTheme.bodyText1,
                   maxLines: 1,
                   softWrap: false,
                   overflow: TextOverflow.fade,
@@ -62,23 +63,19 @@ class ProductCard extends StatelessWidget {
                       : realEstate.idtype == 2
                           ? labels?.propertydetail?.typeproperty2label
                           : labels?.propertydetail?.typeproperty3label,
-                  style: TextStyle(color: Colors.black),
                   maxLines: 1,
                   softWrap: false,
+                  style: themeData.textTheme.bodyText2,
                   overflow: TextOverflow.fade,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "฿ " +
-                          (realEstate.price / 1000000).toStringAsFixed(2) +
-                          " M",
-                      style: TextStyle(
-                        fontSize: getProportionateScreenWidth(18),
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
+                        "฿ " +
+                            (realEstate.price / 1000000).toStringAsFixed(2) +
+                            " M",
+                        style: themeData.textTheme.headline1),
                     InkWell(
                       borderRadius: BorderRadius.circular(50),
                       onTap: () =>

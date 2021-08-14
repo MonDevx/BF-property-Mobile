@@ -22,8 +22,8 @@ class AuthController extends GetxController {
   TextEditingController passwordController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
-  Rx<User> firebaseUser = Rx<User>(null);
-  Rx<UserModel> firestoreUser = Rx<UserModel>(null);
+  Rxn<User> firebaseUser = Rxn<User>();
+  Rxn<UserModel> firestoreUser = Rxn<UserModel>();
 
   @override
   void onReady() async {
@@ -37,9 +37,9 @@ class AuthController extends GetxController {
 
   @override
   void onClose() {
-    nameController?.dispose();
-    emailController?.dispose();
-    passwordController?.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
     super.onClose();
   }
 
@@ -101,7 +101,7 @@ class AuthController extends GetxController {
       Get.snackbar(labels.auth.signInErrorTitle, labels.auth.signInError,
           snackPosition: SnackPosition.TOP,
           duration: Duration(seconds: 7),
-          backgroundColor: Colors.red[400],
+          backgroundColor: Get.theme.errorColor,
           colorText: Get.theme.snackBarTheme.actionTextColor);
     }
   }
@@ -156,7 +156,10 @@ class AuthController extends GetxController {
             uid: result.user.uid,
             email: result.user.email,
             displayName: nameController.text,
-            photoURL: gravatarURL);
+            photoURL: gravatarURL,
+            favorite:[],
+            createdAt : Timestamp.now()
+            );
         //create the user in firestore
         _createUserFirestore(_newUser, result.user);
         emailController.clear();
@@ -168,7 +171,7 @@ class AuthController extends GetxController {
       Get.snackbar(labels.auth.signUpErrorTitle, error.message,
           snackPosition: SnackPosition.TOP,
           duration: Duration(seconds: 10),
-          backgroundColor: Get.theme.snackBarTheme.backgroundColor,
+          backgroundColor: Get.theme.errorColor,
           colorText: Get.theme.snackBarTheme.actionTextColor);
     }
   }
@@ -191,7 +194,7 @@ class AuthController extends GetxController {
           labels.auth.updateUserSuccessNotice,
           snackPosition: SnackPosition.TOP,
           duration: Duration(seconds: 5),
-          backgroundColor: Get.theme.snackBarTheme.backgroundColor,
+          backgroundColor: Get.theme.errorColor,
           colorText: Get.theme.snackBarTheme.actionTextColor);
     } on PlatformException catch (error) {
       //List<String> errors = error.toString().split(',');
@@ -209,7 +212,7 @@ class AuthController extends GetxController {
       Get.snackbar(labels.auth.wrongPasswordNoticeTitle, authError,
           snackPosition: SnackPosition.BOTTOM,
           duration: Duration(seconds: 10),
-          backgroundColor: Get.theme.snackBarTheme.backgroundColor,
+          backgroundColor: Get.theme.errorColor,
           colorText: Get.theme.snackBarTheme.actionTextColor);
     }
   }
@@ -244,7 +247,7 @@ class AuthController extends GetxController {
       Get.snackbar(labels.auth.resetPasswordFailed, error.message,
           snackPosition: SnackPosition.TOP,
           duration: Duration(seconds: 5),
-          backgroundColor: Get.theme.snackBarTheme.backgroundColor,
+          backgroundColor: Get.theme.errorColor,
           colorText: Get.theme.snackBarTheme.actionTextColor);
     }
   }

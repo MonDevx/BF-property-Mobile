@@ -13,6 +13,7 @@ class AppThemes {
   static const Color ebonyClay = Color.fromRGBO(40, 42, 58, 1);
   static const Color google = Color.fromRGBO(219, 68, 55, 1);
   static const Color facbook = Color.fromRGBO(66, 103, 178, 1);
+  static const Color error = Color.fromRGBO(66, 103, 178, 1);
 
   static String font1 = "Prompt";
   static String font2 = "Prompt";
@@ -83,7 +84,7 @@ class AppThemes {
     bodyText2: TextStyle(fontSize: 14.0, color: Colors.black),
     button: TextStyle(
         fontSize: 15.0, color: _lightTextColor, fontWeight: FontWeight.w600),
-    headline6: TextStyle(fontSize: 16.0, color: _lightTextColor),
+    headline6: TextStyle(fontSize: 25.0, color: _lightTextColor),
     subtitle1: TextStyle(fontSize: 16.0, color: _lightTextColor),
     caption: TextStyle(fontSize: 12.0, color: _lightBackgroundAppBarColor),
   );
@@ -97,14 +98,13 @@ class AppThemes {
       backgroundColor: _lightPrimaryColor,
     ),
     appBarTheme: AppBarTheme(
-  
       centerTitle: true,
       elevation: 0,
       brightness: Brightness.light,
       iconTheme: IconThemeData(color: Colors.white),
       textTheme: TextTheme(
-        headline6: TextStyle(
-            color: Colors.white, fontSize: 18, fontFamily: "Prompt"),
+        headline6:
+            TextStyle(color: Colors.white, fontSize: 18, fontFamily: "Prompt"),
       ),
     ),
     colorScheme: ColorScheme.light(
@@ -188,7 +188,7 @@ class AppThemes {
     bodyText2: TextStyle(fontSize: 14.0, color: Colors.grey),
     button: TextStyle(
         fontSize: 15.0, color: _darkTextColor, fontWeight: FontWeight.w600),
-    headline6: TextStyle(fontSize: 16.0, color: _darkTextColor),
+    headline6: TextStyle(fontSize: 25.0, color: _darkTextColor),
     subtitle1: TextStyle(fontSize: 16.0, color: _darkTextColor),
     caption: TextStyle(fontSize: 12.0, color: _darkBackgroundAppBarColor),
   );
@@ -205,16 +205,22 @@ class AppThemes {
       backgroundColor: _darkPrimaryColor,
     ),
     appBarTheme: AppBarTheme(
-      color: _darkBackgroundAppBarColor,
+      color: _darkBackgroundColor,
       iconTheme: IconThemeData(color: _darkTextColor),
-      textTheme: _darkTextTheme,
+      centerTitle: true,
+      elevation: 0,
+      brightness: Brightness.light,
+      textTheme: TextTheme(
+        headline6:
+            TextStyle(color: Colors.white, fontSize: 18, fontFamily: "Prompt"),
+      ),
     ),
     colorScheme: ColorScheme.dark(
-      primary: _darkPrimaryColor,
-      primaryVariant: _darkBackgroundColor,
-
-      // secondary: _darkSecondaryColor,
-    ),
+        primary: _darkBackgroundActionTextColor,
+        primaryVariant: _darkBackgroundColor,
+        surface: _darkBackgroundActionTextColor
+        // secondary: _darkSecondaryColor,
+        ),
     snackBarTheme: SnackBarThemeData(
         contentTextStyle: TextStyle(color: Colors.white),
         backgroundColor: _darkBackgroundAlertColor,
@@ -226,7 +232,7 @@ class AppThemes {
     textTheme: _darkTextTheme,
     buttonTheme: ButtonThemeData(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(28),
         ),
         buttonColor: _darkPrimaryColor,
         textTheme: ButtonTextTheme.primary),
@@ -234,6 +240,7 @@ class AppThemes {
     inputDecorationTheme: InputDecorationTheme(
       prefixStyle: TextStyle(color: _darkIconColor),
       //labelStyle: TextStyle(color: nevada),
+      contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
       border: OutlineInputBorder(
           borderSide: BorderSide(width: 1.0),
           borderRadius: BorderRadius.all(
@@ -241,19 +248,23 @@ class AppThemes {
           )),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: _darkBorderColor, width: 1.0),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: BorderRadius.circular(28),
+        gapPadding: 10,
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: _darkBorderActiveColor),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: BorderRadius.circular(28),
+        gapPadding: 10,
       ),
       errorBorder: OutlineInputBorder(
         borderSide: BorderSide(color: _darkBorderErrorColor),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: BorderRadius.circular(28),
+        gapPadding: 10,
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderSide: BorderSide(color: _darkBorderErrorColor),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: BorderRadius.circular(28),
+        gapPadding: 10,
       ),
       fillColor: _darkInputFillColor,
       //focusColor: _darkBorderActiveColor,

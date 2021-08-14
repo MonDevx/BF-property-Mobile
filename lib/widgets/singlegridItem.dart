@@ -24,7 +24,7 @@ class SinglePageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData themeData = Theme.of(context);
+    final ThemeData themeData = Theme.of(context);
     String assetName;
     if (icon == null) {
       assetName = 'assets/icons/rocket-outline.png';
@@ -57,7 +57,7 @@ class SinglePageItem extends StatelessWidget {
                 margin: EdgeInsets.only(top: 16),
                 child: Text(
                   title,
-                  
+                  style: themeData.textTheme.bodyText1,
                 ),
               )
             ],

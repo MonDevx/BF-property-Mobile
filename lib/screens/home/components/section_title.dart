@@ -15,22 +15,15 @@ class SectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
+    final ThemeData themeData = Theme.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(18),
-            color: Colors.black,
-          ),
-        ),
+        Text(title, style: themeData.textTheme.headline1),
         GestureDetector(
           onTap: press,
-          child: Text(
-            labels?.home?.seemorelabel,
-            style: TextStyle(color: Color(0xFFBBBBBB)),
-          ),
+          child: Text(labels?.home?.seemorelabel,
+              style: themeData.textTheme.caption),
         ),
       ],
     );

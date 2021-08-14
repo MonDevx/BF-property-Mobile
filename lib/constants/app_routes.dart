@@ -1,4 +1,4 @@
-import 'package:bfproperty/screens/%E0%B9%87Home/HomePage.dart';
+
 import 'package:bfproperty/screens/Sign_in/SignInPage.dart';
 import 'package:bfproperty/screens/Sign_up/signuppage.dart';
 import 'package:bfproperty/screens/contact/contactpage.dart';
@@ -6,6 +6,7 @@ import 'package:bfproperty/screens/details/detailpage.dart';
 import 'package:bfproperty/screens/favorite/favoritepage.dart';
 import 'package:bfproperty/screens/fillter/fillterpage.dart';
 import 'package:bfproperty/screens/forgot_password/fogetpasswordpage.dart';
+import 'package:bfproperty/screens/home/homepage.dart';
 import 'package:bfproperty/screens/on_boarding/onboardingpage.dart';
 import 'package:bfproperty/screens/profile/profilepage.dart';
 import 'package:bfproperty/screens/settings/settingscreen.dart';

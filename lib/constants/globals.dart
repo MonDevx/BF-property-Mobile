@@ -24,4 +24,15 @@ class Globals {
           key: "zh", value: "${labels?.settings?.languageszhlabel}"),
     ];
   }
+    static List<MenuOptionsModel> themeOptions(BuildContext context) {
+    final labels = AppLocalizations.of(context);
+    return [
+      MenuOptionsModel(
+          key: "light", value: "Light theme"),
+      MenuOptionsModel(
+          key: "dark", value: "Dark theme"),
+           MenuOptionsModel(
+          key: "system", value: "Defaut system"),
+    ];
+  }
 }

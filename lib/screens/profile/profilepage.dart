@@ -1,4 +1,4 @@
-import 'package:bfproperty/controllers/auth_controller.dart';
+import 'package:bfproperty/controllers/controllers.dart';
 import 'package:bfproperty/localization/localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:bfproperty/constants/size_config.dart';
@@ -7,7 +7,7 @@ import 'components/body.dart';
 
 class ProfileScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
-
+ final ThemeController themeController = ThemeController.to;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -15,16 +15,19 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(labels?.profile?.title),
-            flexibleSpace: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(35, 56, 135, 0.80),
-              Color.fromRGBO(8, 172, 145, 0.80)
-            ],
-            stops: [0.3, 1.04],
+      flexibleSpace: Visibility(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromRGBO(35, 56, 135, 0.80),
+                Color.fromRGBO(8, 172, 145, 0.80)
+              ],
+              stops: [0.3, 1.04],
+            ),
           ),
         ),
+        visible: themeController.currentTheme != "dark",
       ),
         actions: <Widget>[
           Padding(

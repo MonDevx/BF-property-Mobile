@@ -14,6 +14,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
+    final ThemeData themeData = Theme.of(context);
     return SizedBox(
       width: double.infinity,
       child: SingleChildScrollView(
@@ -25,11 +26,7 @@ class Body extends StatelessWidget {
               SizedBox(height: SizeConfig.screenHeight * 0.04),
               Text(
                 labels?.auth?.resetPasswordTitle,
-                style: TextStyle(
-                  fontSize: getProportionateScreenWidth(28),
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: themeData.textTheme.headline6,
               ),
               Text(
                 "${labels?.auth?.resetPasswordSubTitle}\n${labels?.auth?.resetPasswordSubTitle2}",

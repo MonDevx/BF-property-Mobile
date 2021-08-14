@@ -1,10 +1,7 @@
-import 'package:bfproperty/constants/globals.dart';
-import 'package:bfproperty/controllers/controllers.dart';
-import 'package:bfproperty/localization/localizations.dart';
-import 'package:bfproperty/widgets/dropdownpicker.dart';
+import 'package:bfproperty/constants/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
+import 'languagesetting.dart';
+import 'themesetting.dart';
 
 class Body extends StatefulWidget {
   Body({Key key}) : super(key: key);
@@ -17,11 +14,13 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(30.0),
       child: Container(
         child: Column(
           children: [
-            languageListTile(context),
+            LanguageSetting(),
+            SizedBox(height: getProportionateScreenHeight(20)),
+            ThemeSetting()
           ],
         ),
       ),
@@ -29,19 +28,6 @@ class _BodyState extends State<Body> {
   }
 }
 
-languageListTile(BuildContext context) {
-  final labels = AppLocalizations.of(context);
-  return GetBuilder<LanguageController>(
-    builder: (controller) => ListTile(
-      title: Text(labels?.settings?.languageslabel),
-      trailing: DropdownPicker(
-        menuOptions: Globals.languageOptions(context),
-        selectedOption: controller.currentLanguage,
-        onChanged: (value) async {
-          await controller.updateLanguage(value);
-          Get.forceAppUpdate();
-        },
-      ),
-    ),
-  );
-}
+
+
+

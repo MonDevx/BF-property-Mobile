@@ -8,6 +8,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
+    final ThemeData themeData = Theme.of(context);
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
@@ -18,14 +19,8 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
-                Text(
-                  labels?.auth?.welcomeText,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: getProportionateScreenWidth(28),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                Text(labels?.auth?.welcomeText,
+                    style: themeData.textTheme.headline6),
                 Text(
                   "${labels?.auth?.welcomeSubText1}  \n${labels?.auth?.welcomeSubText2}",
                   textAlign: TextAlign.center,

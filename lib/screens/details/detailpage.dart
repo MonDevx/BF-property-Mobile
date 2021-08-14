@@ -72,7 +72,7 @@ class _DetailScreenState extends State<DetailScreen> {
           'ข้อผิดพลาด',
           responsapi.body,
           colorText: Colors.white,
-          backgroundColor: Colors.red[400],
+          backgroundColor: Get.theme.errorColor,
           duration: Duration(seconds: 5),
         );
       }
@@ -82,7 +82,7 @@ class _DetailScreenState extends State<DetailScreen> {
         'ข้อผิดพลาด',
         response.body,
         colorText: Colors.white,
-        backgroundColor: Colors.red[400],
+        backgroundColor: Get.theme.errorColor,
         duration: Duration(seconds: 5),
       );
     }

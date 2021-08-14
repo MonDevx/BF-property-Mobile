@@ -15,7 +15,7 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AuthController>(
-        builder: (controller) => controller?.firestoreUser?.value?.uid == null
+        builder: (controller) => controller.firestoreUser.value?.uid == null
             ? Center(
                 child: CircularProgressIndicator(),
               )
@@ -28,27 +28,31 @@ class HomeHeader extends StatelessWidget {
                     SearchField(),
                     IconBtnWithCounter(
                       svgSrc: "assets/icons/Heart Icon.svg",
-                      numOfitem: controller.firestoreUser.value.favorite.length ,
+                      numOfitem: controller.firestoreUser.value.favorite?.length ,
                       press: () {
                         Get.toNamed('/myfavorite');
                       },
                     ),
                     InkWell(
                       //authController.signOut()
+                      borderRadius: BorderRadius.circular(100),
                       onTap: () => Get.toNamed("/profile"),
-                      child: new Container(
-                          width: getProportionateScreenWidth(46),
-                          height: getProportionateScreenWidth(46),
-                          decoration: new BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: new DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: (controller
-                                              .firestoreUser.value.photoURL !=
-                                          ""
-                                      ? new NetworkImage(controller
-                                          .firestoreUser.value.photoURL)
-                                      : AssetImage("assets/images/avatar.png"))))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: new Container(
+                            width: getProportionateScreenWidth(46),
+                            height: getProportionateScreenWidth(46),
+                            decoration: new BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: new DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: (controller
+                                                .firestoreUser.value.photoURL !=
+                                            ""
+                                        ? new NetworkImage(controller
+                                            .firestoreUser.value.photoURL)
+                                        : AssetImage("assets/images/avatar.png"))))),
+                      ),
                     ),
                   ],
                 ),

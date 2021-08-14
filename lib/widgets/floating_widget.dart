@@ -5,11 +5,13 @@ class FloatingWidget extends StatelessWidget {
   final IconData leadingIcon;
   final String txt;
   final Function onPressed;
+  final Color color;
   FloatingWidget({
     Key key,
     this.leadingIcon,
     this.txt,
     this.onPressed,
+    this.color
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class FloatingWidget extends StatelessWidget {
         heroTag: null,
         child: Ink(
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: color,
             borderRadius: BorderRadius.circular(75.0),
           ),
           child: Container(

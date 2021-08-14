@@ -29,17 +29,14 @@ class FacilityWidget extends StatelessWidget {
           children: <Widget>[
             Icon(
               iconData,
-              color: themeData.colorScheme.primary,
+              color: themeData.iconTheme.color,
               size: 28,
             ),
             Container(
               margin: EdgeInsets.only(top: 8),
               child: Text(
                 text,
-                style: new TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0),
+           style: themeData.textTheme.bodyText2,
               ),
             )
           ],

@@ -21,6 +21,7 @@ class RealestateCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
+    final ThemeData themeData = Theme.of(context);
     return InkWell(
         onTap: () => Get.toNamed('/detail', arguments: realEstate.name),
         child: Padding(
@@ -56,9 +57,7 @@ class RealestateCard extends StatelessWidget {
                               child: Text(
                                 realEstate.name
                                     .replaceAll(new RegExp(r'-'), ' '),
-                                style: new TextStyle(
-                                    fontSize: 17.0,
-                                    fontWeight: FontWeight.bold),
+                                style: themeData.textTheme.bodyText1,
                                 maxLines: 1,
                                 softWrap: false,
                                 overflow: TextOverflow.fade,
@@ -83,19 +82,19 @@ class RealestateCard extends StatelessWidget {
                               maxLines: 1,
                               softWrap: false,
                               overflow: TextOverflow.fade,
-                              style: new TextStyle(fontSize: 14.0),
+                              style: themeData.textTheme.bodyText2,
                             ),
                             Row(
                               children: [
                                 Text(
                                   realEstate.propertysize.toString() +
                                       "\b${labels?.propertydetail?.sizelabel}",
-                                  style: new TextStyle(fontSize: 14.0),
+                                  style: themeData.textTheme.bodyText2,
                                 ),
                                 SizedBox(width: 10),
                                 Text(
                                   "\$${oCcy.format(realEstate.price / realEstate.propertysize)} /\b${labels?.propertydetail?.sizelabel}",
-                                  style: new TextStyle(fontSize: 14.0),
+                                  style: themeData.textTheme.bodyText2,
                                 )
                               ],
                             ),
@@ -106,9 +105,7 @@ class RealestateCard extends StatelessWidget {
                                 children: <Widget>[
                                   Text(
                                     "\$${oCcy.format(realEstate.price)} ${labels?.propertydetail?.pricelabel}",
-                                    style: new TextStyle(
-                                        fontSize: 17.0,
-                                        fontWeight: FontWeight.bold),
+                                    style: themeData.textTheme.bodyText1,
                                     maxLines: 1,
                                     softWrap: false,
                                     overflow: TextOverflow.fade,

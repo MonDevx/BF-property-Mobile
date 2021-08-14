@@ -18,7 +18,7 @@ class SpecialOffers extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
-            title: labels?.home?.speciallabel,
+            title: labels?.home?.recommendlabel,
             press: () {},
           ),
         ),

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:bfproperty/constants/size_config.dart';
 import 'package:bfproperty/controllers/auth_controller.dart';
 import 'package:bfproperty/controllers/user_controller.dart';
 import 'package:bfproperty/localization/localizations.dart';
@@ -76,6 +77,7 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
+    final ThemeData themeData = Theme.of(context);
     var imagelist = widget.data.urlimginside + widget.data.urlimgoutside;
     return SafeArea(
       child: Container(
@@ -171,17 +173,14 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(widget.data.name.replaceAll(new RegExp(r'-'), ' '),
-                      style: new TextStyle(
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 0)),
+                       style: themeData.textTheme.headline1,),
                   Text(
                       widget.data.idtype == 1
                           ? labels?.propertydetail?.typeproperty1label
                           : widget.data.idtype == 2
                               ? labels?.propertydetail?.typeproperty2label
                               : labels?.propertydetail?.typeproperty3label,
-                      style: new TextStyle(fontSize: 17.0, letterSpacing: 0)),
+                       style: themeData.textTheme.bodyText1),
                   Container(
                     margin: EdgeInsets.only(top: 16),
                     child: RichText(
@@ -200,10 +199,7 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                                 widget.data.province +
                                 " " +
                                 widget.data.zipcode,
-                            style: new TextStyle(
-                                fontSize: 14.0,
-                                color: Colors.black,
-                                fontFamily: 'Prompt'),
+                           style: themeData.textTheme.bodyText1,
                           ),
                         ],
                       ),
@@ -226,13 +222,11 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                           children: [
                             Text(
                               labels?.propertydetail?.pricelabel,
+                              style: themeData.textTheme.bodyText1
                             ),
                             Text(
                                 "${formatCurrency.format(widget.data.price)} ${labels?.propertydetail?.pricelabel}",
-                                style: new TextStyle(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: 0))
+                                style: themeData.textTheme.bodyText2)
                           ],
                         ),
                       ),
@@ -242,6 +236,7 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                           children: [
                             Text(
                               labels?.propertydetail?.familylabel,
+                              style: themeData.textTheme.bodyText1
                             ),
                             Text(
                                 widget.data.sizefamily == 1
@@ -251,10 +246,7 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                                             ?.propertydetail?.familytype2label
                                         : labels
                                             ?.propertydetail?.familytype3label,
-                                style: new TextStyle(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: 0))
+                                style: themeData.textTheme.bodyText2)
                           ],
                         ),
                       ),
@@ -318,18 +310,12 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                 children: <Widget>[
                   Text(
                     labels?.propertydetail?.detaillabel,
-                    style: new TextStyle(
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.w600,
-                    ),
+                   style: themeData.textTheme.bodyText1
                   ),
                   Container(
                       margin: EdgeInsets.only(top: 8),
                       child: Text(widget.data.detail,
-                          style: new TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w500,
-                          )))
+                        style: themeData.textTheme.bodyText2))
                 ],
               ),
             ),
@@ -432,7 +418,8 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
                       ],
                     ),
                   ],
-                ))
+                )),
+                SizedBox(height: getProportionateScreenHeight(125)),
           ],
         ),
       ),

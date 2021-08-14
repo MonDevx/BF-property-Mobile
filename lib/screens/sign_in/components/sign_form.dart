@@ -37,6 +37,7 @@ class _SignFormState extends State<SignForm> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData themeData = Theme.of(context);
     final labels = AppLocalizations.of(context);
     return Form(
       key: _formKey,

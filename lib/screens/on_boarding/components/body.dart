@@ -18,7 +18,7 @@ class _BodyState extends State<Body> {
   Widget _buildImage(String assetName, double d) {
     return Align(
       child:
-          Image.asset('assets/images/$assetName.jpg', width: 250.0, height: d),
+          Image.asset('assets/images/$assetName.png', width: 250.0, height: d),
       alignment: Alignment.bottomCenter,
     );
   }
@@ -26,12 +26,13 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     final labels = AppLocalizations.of(context);
-    const bodyStyle = TextStyle(fontSize: 19.0);
-    const pageDecoration = const PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyTextStyle: bodyStyle,
+    final ThemeData themeData = Theme.of(context);
+
+    var pageDecoration = PageDecoration(
+      titleTextStyle: themeData.textTheme.headline6,
+      bodyTextStyle: themeData.textTheme.bodyText1,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
+      pageColor: themeData.scaffoldBackgroundColor,
       imagePadding: EdgeInsets.zero,
     );
 
@@ -64,9 +65,9 @@ class _BodyState extends State<Body> {
       nextFlex: 0,
       skip: Text('${labels?.onboarding?.buttonskip}'),
       next: const Icon(Icons.arrow_forward),
-      globalBackgroundColor: Colors.white,
+      globalBackgroundColor: themeData.scaffoldBackgroundColor,
       done: Text('${labels?.onboarding?.buttoncompleted}',
-          style: TextStyle(fontWeight: FontWeight.w600)),
+          style: themeData.textTheme.bodyText1),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),
