@@ -1,7 +1,7 @@
 import 'package:bfproperty/localization/localizations.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/custom_app_bar.dart';
-import 'components/body.dart';
+import 'widgets/body.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   @override

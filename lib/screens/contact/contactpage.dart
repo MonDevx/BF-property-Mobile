@@ -1,5 +1,6 @@
 import 'package:bfproperty/localization/localizations.dart';
-import 'package:bfproperty/screens/contact/components/body.dart';
+import 'package:bfproperty/screens/contact/widgets/body.dart';
+
 import 'package:bfproperty/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 

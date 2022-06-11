@@ -8,7 +8,7 @@ import 'package:bfproperty/models/real_estate_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../widgets/custom_app_bar.dart';
-import 'components/body.dart';
+import 'widgets/body.dart';
 
 class FavoriteScreen extends StatefulWidget {
   @override
@@ -28,7 +28,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   }
 
   // ignore: missing_return
-
 
   @override
   Widget build(BuildContext context) {
@@ -68,20 +67,35 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               );
             } else if (authController.firestoreUser.value.favorite.length ==
                 0) {
-              return Center(
-                child: SingleChildScrollView(
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                          height: getProportionateScreenWidth(150),
-                          width: getProportionateScreenWidth(150),
-                          child: SvgPicture.asset('assets/images/No_Data.svg')),
-                      SizedBox(height: 15),
-                      Text(labels.favorite.emptylabel, style: TextStyle(fontSize: 18))
-                    ],
+              return Column(
+                children: [
+                  Expanded(
+                    child: SingleChildScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minHeight: MediaQuery.of(context).size.height -
+                              Scaffold.of(context).appBarMaxHeight,
+                          minWidth: MediaQuery.of(context).size.width,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            SizedBox(
+                                height: getProportionateScreenWidth(150),
+                                width: getProportionateScreenWidth(150),
+                                child: SvgPicture.asset(
+                                    'assets/images/No_Data.svg')),
+                            SizedBox(height: 15),
+                            Text(labels.favorite.emptylabel,
+                                style: TextStyle(fontSize: 18))
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               );
             }
 

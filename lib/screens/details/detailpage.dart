@@ -8,14 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'components/body.dart';
+import 'widgets/body.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-
-
 
 class DetailScreen extends StatefulWidget {
   @override
@@ -48,14 +46,14 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   Future<RealEstateModel> loadRealestate(name) async {
-    final response = await http.get(
-        Uri.parse('https://us-central1-bfproperty.cloudfunctions.net/webApi/api/v1/realestatedetail/' +
+    final response = await http.get(Uri.parse(
+        'https://us-central1-bfproperty.cloudfunctions.net/webApi/api/v1/realestatedetail/' +
             name));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-         
+
       Map<String, dynamic> jsonResponse = json.decode(response.body);
       jsonResponse['data'].addAll({'id': jsonResponse['id']});
       final responsapi = await http.get(Uri.parse(
@@ -126,7 +124,8 @@ class _DetailScreenState extends State<DetailScreen> {
                                 prefixIcon: Icon(LineAwesomeIcons.mail_bulk,
                                     color: Colors.grey),
                                 labelText: labels?.propertydetail?.emaillabel,
-                                hintText: labels?.propertydetail?.emailhintlabel,
+                                hintText:
+                                    labels?.propertydetail?.emailhintlabel,
                                 errorText: isvaildemail
                                     ? null
                                     : labels?.propertydetail?.emailerrorlabel),
@@ -136,16 +135,15 @@ class _DetailScreenState extends State<DetailScreen> {
                           ),
                           TextField(
                             maxLength: 12,
-                            inputFormatters: [
-                              PhoneInputFormatter()
-                            ],
+                            inputFormatters: [PhoneInputFormatter()],
                             keyboardType: TextInputType.number,
                             controller: _controllerphone,
                             decoration: InputDecoration(
                                 prefixIcon: Icon(LineAwesomeIcons.mobile_phone,
                                     color: Colors.grey),
                                 labelText: labels?.propertydetail?.phonelabel,
-                                hintText: labels?.propertydetail?.phonehintlabel,
+                                hintText:
+                                    labels?.propertydetail?.phonehintlabel,
                                 counterText: "",
                                 errorText: isvaildphone
                                     ? null
@@ -222,7 +220,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               );
                             } else {
                               Get.snackbar(
-                                 labels?.propertydetail?.errorlabel,
+                                labels?.propertydetail?.errorlabel,
                                 labels?.propertydetail?.errordetaillabel,
                                 colorText: Colors.white,
                                 backgroundColor: Colors.red[400],
@@ -247,7 +245,6 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
     SizeConfig().init(context);
     final labels = AppLocalizations.of(context);
     return Scaffold(

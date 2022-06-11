@@ -14,8 +14,8 @@ class HomeHeader extends StatelessWidget {
   final AuthController authController = AuthController.to;
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<AuthController>(
-        builder: (controller) => controller.firestoreUser.value?.uid == null
+    return GetX<AuthController>(
+        builder: (controller) => controller?.firestoreUser?.value?.uid == null
             ? Center(
                 child: CircularProgressIndicator(),
               )
@@ -28,7 +28,8 @@ class HomeHeader extends StatelessWidget {
                     SearchField(),
                     IconBtnWithCounter(
                       svgSrc: "assets/icons/Heart Icon.svg",
-                      numOfitem: controller.firestoreUser.value.favorite?.length ,
+                      numOfitem:
+                          controller.firestoreUser.value.favorite?.length,
                       press: () {
                         Get.toNamed('/myfavorite');
                       },
@@ -51,7 +52,8 @@ class HomeHeader extends StatelessWidget {
                                             ""
                                         ? new NetworkImage(controller
                                             .firestoreUser.value.photoURL)
-                                        : AssetImage("assets/images/avatar.png"))))),
+                                        : AssetImage(
+                                            "assets/images/avatar.png"))))),
                       ),
                     ),
                   ],

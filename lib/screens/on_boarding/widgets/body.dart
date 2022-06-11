@@ -31,7 +31,7 @@ class _BodyState extends State<Body> {
     var pageDecoration = PageDecoration(
       titleTextStyle: themeData.textTheme.headline6,
       bodyTextStyle: themeData.textTheme.bodyText1,
-      descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      // descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       pageColor: themeData.scaffoldBackgroundColor,
       imagePadding: EdgeInsets.zero,
     );
@@ -61,7 +61,7 @@ class _BodyState extends State<Body> {
       onDone: () => _onIntroEnd(context),
       //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
       showSkipButton: true,
-      skipFlex: 0,
+      // skipFlex: 0,
       nextFlex: 0,
       skip: Text('${labels?.onboarding?.buttonskip}'),
       next: const Icon(Icons.arrow_forward),

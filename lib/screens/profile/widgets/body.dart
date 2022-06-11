@@ -47,7 +47,7 @@ class Body extends StatelessWidget {
                         crossAxisCount: 2,
                         padding: EdgeInsets.all(5),
                         mainAxisSpacing: 16,
-                        childAspectRatio: 3 / 2,
+                        childAspectRatio: 2.5 / 2,
                         crossAxisSpacing: 16,
                         children: <Widget>[
                           SinglePageItem(

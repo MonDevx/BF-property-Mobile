@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
          <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
-        android:name="io.flutter.app.FlutterApplication"
+        android:name="${applicationName}"
         android:label="bfproperty"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -72,5 +72,7 @@
 </provider>
 
     </application>
-
+<meta-data
+    android:name="flutterEmbedding"
+    android:value="2" />
 </manifest>

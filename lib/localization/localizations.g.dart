@@ -219,7 +219,7 @@ class AppLocalizations {
         youlabel: "you",
         seemorelabel: "See more",
         searchlabel: "search home",
-        recommendlabel: "Recommended Property for You",
+        recommendlabel: "Recommended Property",
         typehouselabel1: "Single House",
         typehouselabel2: "Town House",
         typehouselabel3: "Condo",

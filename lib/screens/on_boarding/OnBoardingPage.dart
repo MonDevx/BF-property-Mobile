@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bfproperty/constants/size_config.dart';
-import 'components/body.dart';
+import 'widgets/body.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   @override

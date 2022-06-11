@@ -7,7 +7,7 @@ import 'package:flutter_thailand_provinces/provider/province_provider.dart';
 import 'package:flutter_thailand_provinces/dao/province_dao.dart';
 import 'package:get/utils.dart';
 import 'package:get/get.dart';
-import 'components/dropdown.dart';
+import 'widgets/dropdown.dart';
 
 class Fillter extends StatefulWidget {
   // fillter({Key? key}) : super(key: key);

@@ -3,13 +3,8 @@
 * Version : 1.0.0
 * */
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-
-
-
 
 class SinglePageItem extends StatelessWidget {
   final String title, icon;
@@ -40,9 +35,10 @@ class SinglePageItem extends StatelessWidget {
     );
     return InkWell(
       onTap: () {
-       Get.toNamed('/'+this.navigation);
+        Get.toNamed('/' + this.navigation);
       },
       child: Container(
+        padding: EdgeInsets.all(16),
         decoration: new BoxDecoration(
           color: themeData.backgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -50,7 +46,6 @@ class SinglePageItem extends StatelessWidget {
         ),
         child: Center(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               iconWidget,
               Container(
@@ -58,6 +53,7 @@ class SinglePageItem extends StatelessWidget {
                 child: Text(
                   title,
                   style: themeData.textTheme.bodyText1,
+                  textAlign: TextAlign.center,
                 ),
               )
             ],
@@ -67,4 +63,3 @@ class SinglePageItem extends StatelessWidget {
     );
   }
 }
-

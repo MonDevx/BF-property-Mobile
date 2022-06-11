@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bfproperty/localization/localizations.dart';
-import 'components/body.dart';
+import 'widgets/body.dart';
 import '../../widgets/custom_app_bar.dart';
 
 class SignUpScreen extends StatelessWidget {

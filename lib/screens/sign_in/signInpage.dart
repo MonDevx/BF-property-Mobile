@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bfproperty/localization/localizations.dart';
 import 'package:bfproperty/constants/size_config.dart';
-import 'components/body.dart';
+import 'widgets/body.dart';
 import '../../widgets/custom_app_bar.dart';
 
 class SignInScreen extends StatelessWidget {
