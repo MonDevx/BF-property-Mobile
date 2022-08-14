@@ -1,0 +1,1 @@
+export './views/terms_page.dart';

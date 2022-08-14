@@ -8,7 +8,7 @@
 .buildlog/
 .history
 .svn/
-
+/web/
 # IntelliJ related
 *.iml
 *.ipr
@@ -51,3 +51,4 @@ app.*.map.json
 .env.test.local
 .env.production.local
 .env
+/ios/Runner/GoogleService-Info.plist

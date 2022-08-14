@@ -1,0 +1,13 @@
+export './contact/index.dart';
+export './details/index.dart';
+export './favorite/index.dart';
+export './fillter/index.dart';
+export './forgot_password/index.dart';
+export './home/index.dart';
+export './on_boarding/index.dart';
+export './profile/index.dart';
+export './search/index.dart';
+export './settings/index.dart';
+export './sign_in/index.dart';
+export './sign_up/index.dart';
+export './terms/index.dart';
